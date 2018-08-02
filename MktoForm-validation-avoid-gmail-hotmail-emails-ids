@@ -1,0 +1,10 @@
+// this is Marketo Validation Script, to avoid perosnal personal email ids || simple paste under form 2.0
+
+<!--Marketo Form2.0 *END* from Here-->
+<!--   @@@@@ Marketo validation code by sud Start @@@@@ -->
+<script>
+MktoForms2.whenReady(function(form) 
+{    /* array of validator objects, add/modify at will */   
+var extendedValidators = [{     field: 'FirstName',     pattern: /[0-9]/,     predicate: false,     message: 'First names can\'t have numbers.',   }, {     field: 'LastName',     pattern: /[0-9]/,     predicate: false,     message: 'Last names can\'t have numbers.',   }, {       field: 'Email',       pattern: /@(gmail.com|yahoo.com|hotmail.com|msn.com|outlook.com|abc.com|test.com|123.com|ymail.com)$/,       predicate: false,       message: 'Must use a corporate email address'       }    ];    /* ---- no need to touch anything below this line */   var formEl = form.getFormElem()[0];    form.onValidate(function(nativeValid) {     if (!nativeValid) return;      form.submittable(false);      var firstInvalid;     extendedValidators.some(function(vtor) {       if (vtor.pattern && !vtor.predicate == vtor.pattern.test(form.getValues()[vtor.field])) {         firstInvalid = firstInvalid || {           message: vtor.message,           el: formEl.querySelector('#' + vtor.field)         };         return true;       }     });      if (firstInvalid) {       form.showErrorMessage(firstInvalid.message, MktoForms2.$(firstInvalid.el));     } else {       form.submittable(true);     }    });   });  
+</script>
+<!--   @@@@@ Marketo validation code by sud End @@@@@ -->
