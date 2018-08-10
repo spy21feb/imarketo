@@ -1,0 +1,8 @@
+ <script src="//xxx-lonxx.marketo.com/js/forms2/js/forms2.min.js"></script>
+    <form id="mktoForm_xxxx"></form>
+    <script>
+     MktoForms2.loadForm("//app-lon03.marketo.com", "xxx-xxx-xxx", xxxx, function(form){
+     form.vals({ "FirstName":"SPY"}); // also can pass own value in existing Name field 
+  $('#workshop').html('<option value="My Value A">My Value A</option><option value="My Value B" selected>My Value B</option><option value="My Value C">My Value C</option>');
+      }); // workshop is list box in form
+</script>
