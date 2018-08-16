@@ -1,0 +1,6 @@
+<style>
+
+button {text-indent: -9999px; line-height: 0;}
+button::after { content: "MY NEW BUTTON TEXT"; /* Write you own button name */ text-indent: 0;  display: block; line-height: initial; }
+
+</style>
