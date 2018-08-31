@@ -10,4 +10,7 @@
 </script>
 
 // for Marketo LP
-<script type="text/javascript"> MktoForms2.whenReady(function(form) { $('#workshop').html('<option value="a">Item A</option><option value="b" selected>Item B</option><option value="c">Item C</option>');  });   </script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script> 
+  <script type="text/javascript"> MktoForms2.whenReady(function(form) { $('#meetingDay').html('<option value="">Select Your Time...</option>
+  <option value="13 Aug 01:30AM - 05:00 PM">13 Aug 01:30AM - 05:00 PM</option><option value="14 Aug 09:30AM - 12:30 PM">14 Aug 09:30AM - 12:30 PM</option>
+  <option value="14 Aug 01:30AM - 03:00 PM">14 Aug 01:30AM - 03:00 PM</option>');  });   </script>
