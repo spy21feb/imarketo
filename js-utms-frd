@@ -1,0 +1,31 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script><script type="text/javascript">
+	jQuery(document).ready(function(){
+	jQuery( 'a' ).each( function( index, element ){
+		var url = jQuery( element ).prop( 'href' );
+		
+		  					$.getUrlParam = function (name) {
+							var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                    		var r = window.location.search.substr(1).match(reg);
+                    		if (r != null) return unescape(r[2]); return null;}
+            
+    						var xx = $.getUrlParam('pubID');
+							var ut1 = $.getUrlParam('utm_source');
+							var ut2 = $.getUrlParam('utm_medium');
+							var ut3 = $.getUrlParam('utm_campaign');
+		
+		
+		if ( url.indexOf( '?' ) == -1 ) {
+			url += '?pubID='+xx;
+			url += '?utm_source='+ut1;
+			url += '?utm_medium='+ut2;
+			url += '?utm_campaign='+ut3;
+		} else {
+			url += '&pubID='+xx;
+			url += '&utm_source='+ut1;
+			url += '&utm_medium='+ut2;
+			url += '&utm_campaign='+ut3;
+		}
+
+		jQuery( element ).prop( 'href', url );
+	} );
+});</script>
