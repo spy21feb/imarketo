@@ -22,3 +22,16 @@ MktoForms2.whenReady(function (form){
 });
 
 </script>
+
+
+
+//for injecting text @ lightbox mkto
+
+MktoForms2.loadForm("//app-sj02.marketo.com", "005-SHS-767", 1828, function(form) {
+  MktoForms2.lightbox(form).show();
+  form.setValues({
+    FirstName: 'SUD'
+  });
+  
+  form.getFormElem()[0].insertAdjacentHTML('afterBegin','<H1>This is my injected title</H1>');
+});
